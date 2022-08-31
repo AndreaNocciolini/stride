@@ -4,10 +4,10 @@ import './Notes.scss';
 import SingleNote from './SingleNote'
 
 function Notes() {
-  const [contatore, setContatore] = useState(1);
+  const [anotherContatore, setAnotherContatore] = useState(1);
 
   const clicketi = (): any => {
-    setContatore(contatore + 1);
+    setAnotherContatore(anotherContatore + 1);
   }
 
   return (
@@ -17,7 +17,7 @@ function Notes() {
         <button onClick={clicketi}>PROVA</button>
         {
           // render multiple elements for every click
-          Array.from({ length: contatore })
+          Array.from({ length: anotherContatore })
             .map((_, index) => (
               <SingleNote key={index} />
             )
