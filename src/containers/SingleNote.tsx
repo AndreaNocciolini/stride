@@ -30,7 +30,7 @@ function SingleNote(props: any) {
                 </button>
             </div>
             <p>
-                let's see {`${props.text}`}
+                let's see {`${props.note.text}`}
             </p>
         </div>
     );
