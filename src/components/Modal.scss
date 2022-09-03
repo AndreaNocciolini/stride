@@ -1,10 +1,23 @@
 .Modal-background {
     width: 100vw;
     height: 100vh;
-    background-color: #1F1F1F;
+    background-color: #1f1f1f;
     opacity: 0.9;
     position: fixed;
     display: flex;
     justify-content: center;
     align-items: center;
+
+    .Modal {
+        background-color: #1f1f1f;
+        opacity: 0.3;
+        transform: translateY(50rem);
+        animation-name: appear;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
+        @keyframes appear {
+            from {transform: translateY(50rem); opacity: 0.3}
+            to {transform: translateY(0); opacity: 1}
+        }
+    }
 }

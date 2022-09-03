@@ -14,6 +14,7 @@ function App() {
 
   const [isModalOpen, setIsModalOpen] = useState(false as boolean);
   const [notes, setNotes] = useState([] as Note[]);
+  const [message, setMessage] = useState('');
 
   const openModal = (): any => {
     setIsModalOpen(true)
@@ -29,6 +30,8 @@ function App() {
           setIsModalOpen={setIsModalOpen}
           notes={notes}
           setNotes={setNotes}
+          message={message}
+          setMessage={setMessage}
         />}
       </div>
 
