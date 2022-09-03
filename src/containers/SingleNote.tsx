@@ -9,7 +9,7 @@ function SingleNote(props: any) {
     }
 
     return (
-        <div className="SingleNote m-0 w-100 d-flex text-justify-center">
+        <div className="SingleNote w-100 d-flex text-justify-center">
             <div className="buttons-container">
                 <button>
                     <svg className="bin" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -29,7 +29,7 @@ function SingleNote(props: any) {
                     }
                 </button>
             </div>
-            <p>
+            <p className='note-text d-flex align-items-center mb-0'>
                 let's see {`${props.note.text}`}
             </p>
         </div>

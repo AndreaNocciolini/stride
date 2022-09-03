@@ -1,5 +1,6 @@
 .SingleNote {
-    height: 50%;
+    margin-bottom: 40px;
+
     .buttons-container {
         button {
             background: none;
@@ -18,5 +19,11 @@
                 margin: 0px 0px 0px 20px;
             }
         }
+    }
+
+    .note-text {
+        margin-left: 24px;
+        font-size: 17px;
+        font-weight: 400;
     }
 }

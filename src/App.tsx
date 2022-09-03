@@ -2,26 +2,35 @@ import React, { useState } from 'react';
 import './App.scss';
 
 import Notes from './containers/Notes';
+import Modal from './components/Modal';
+
+// Note Type, should i move it to an external file?
+export type Note = {
+  id: number,
+  content: string
+}
 
 function App() {
 
-  const [notes, setNotes] = useState([] as any[]);
+  const [isModalOpen, setIsModalOpen] = useState(false as boolean);
+  const [notes, setNotes] = useState([] as Note[]);
 
-  const prova = {
-    text: "prova"
-  }
-
-  const clicketi = (): any => {
-    setNotes([prova, ...notes]);
+  const openModal = (): any => {
+    setIsModalOpen(true)
   }
   return (
     <div className="App">
-      <header className="App-header">
+      <div className="App-container">
         <Notes notes={notes} addNotes={setNotes} />
-        <button onClick={clicketi} className="col-6 new-note">
+        <button onClick={openModal} className="col-6 new-note">
           Nuova Voce
         </button>
-      </header>
+        {isModalOpen && <Modal
+          setIsModalOpen={setIsModalOpen}
+          notes={notes}
+          setNotes={setNotes}
+        />}
+      </div>
 
     </div>
   );
