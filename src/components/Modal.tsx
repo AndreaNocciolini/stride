@@ -1,4 +1,5 @@
 import React from 'react';
+import { v4 as uuid } from 'uuid';
 import './Modal.scss';
 // import { Note } from '../App';
 
@@ -7,7 +8,7 @@ function Modal(props: any) {
     const saveNote = () => {
         if (props.message) {
             props.setNotes([...props.notes, {
-                id: props.notes.length ? props.notes.length + 1 : 1,
+                id: uuid(),
                 content: props.message
             }])
         }
