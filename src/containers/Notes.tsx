@@ -12,7 +12,7 @@ function Notes(props: any) {
         {
           // render multiple elements for every click
           props.notes.map((note: any, index: number) => (
-            <SingleNote key={index} note={note} />
+            <SingleNote key={index} note={note} setNotes={props.setNotes} notes={props.notes}/>
           )
           ).reverse()
         }

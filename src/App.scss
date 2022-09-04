@@ -14,11 +14,19 @@
   color: white;
 
   .new-note {
-    margin-top: 1em;
+    color: #01001e;
     box-shadow: #1f1f1f;
-    background-color: #716FB2;
-    border-radius: 32px;
+    background-color: #716fb2;
+    width: 13%;
+    margin-top: 1em;
     padding: 16px 32px;
-    width: 15%;
+    border-radius: 32px;
+
+    font-size: 17px;
+    font-weight: 500;
+
+    svg {
+      margin-right: 20px;
+    }
   }
 }
