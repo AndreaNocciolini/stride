@@ -6,8 +6,9 @@ import Modal from './components/Modal';
 
 // Note Type, should i move it to an external file?
 export type Note = {
-  id: number,
-  content: string
+  id: string,
+  content: string,
+  done: boolean
 }
 
 function App() {

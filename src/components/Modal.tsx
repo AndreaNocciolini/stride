@@ -1,5 +1,6 @@
 import React from 'react';
 import { v4 as uuid } from 'uuid';
+import { Note } from '../App';
 import './Modal.scss';
 // import { Note } from '../App';
 
@@ -9,8 +10,9 @@ function Modal(props: any) {
         if (props.message) {
             props.setNotes([...props.notes, {
                 id: uuid(),
-                content: props.message
-            }])
+                content: props.message,
+                done: false
+            } as Note])
         }
         props.setIsModalOpen(false)
         props.setMessage('')
