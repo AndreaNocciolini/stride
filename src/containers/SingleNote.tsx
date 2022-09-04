@@ -5,7 +5,11 @@ function SingleNote(props: any) {
     let [checked, setChecked] = useState(false)
 
     const click = () => {
-        return checked ? setChecked(false) : setChecked(true);
+        if (checked) {
+            setChecked(false)
+        } else {
+            setChecked(true);
+        }
     }
 
     return (
@@ -31,9 +35,14 @@ function SingleNote(props: any) {
                     }
                 </button>
             </div>
-            <p className='note-text d-flex align-items-center mb-0'>
-                {`${props.note.content}`}
-            </p>
+            {!checked ?
+                <p className='note-text d-flex align-items-center mb-0'>
+                    {`${props.note.content}`}
+                </p>
+                :
+                <p className='checked note-text d-flex align-items-center mb-0'>
+                    {`${props.note.content}`}
+                </p>}
         </div>
     );
 }
