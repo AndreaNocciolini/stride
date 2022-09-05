@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './App.scss';
 
+// import { CSSTransition, TransitionGroup } from "react-transition-group";
 import Notes from './containers/Notes';
 import Modal from './components/Modal';
 
@@ -32,13 +33,24 @@ function App() {
           </svg>
           Nuova Voce
         </button>
-        {isModalOpen && <Modal
-          setIsModalOpen={setIsModalOpen}
-          notes={notes}
-          setNotes={setNotes}
-          message={message}
-          setMessage={setMessage}
-        />}
+        {isModalOpen &&
+          // <TransitionGroup>
+          //   <CSSTransition
+          //     key={null}
+          //     in={isModalOpen}
+          //     timeout={0}
+          //     classNames="modal-animation"
+          //   >
+          <Modal
+            setIsModalOpen={setIsModalOpen}
+            notes={notes}
+            setNotes={setNotes}
+            message={message}
+            setMessage={setMessage}
+          />
+          //   </CSSTransition>
+          // </TransitionGroup>
+        }
       </div>
 
     </div>

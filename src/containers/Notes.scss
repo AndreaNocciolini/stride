@@ -13,4 +13,19 @@
         font-weight: bold;
         margin-bottom: 64px;
     }
+
+    .note-animation-enter {
+        opacity: 0;
+    }
+    .note-animation-enter-active {
+        opacity: 1;
+        transition: opacity 500ms ease-in;
+    }
+    .note-animation-exit {
+        opacity: 1;
+    }
+    .note-animation-exit-active {
+        opacity: 0;
+        transition: opacity 500ms ease-in;
+    }
 }
