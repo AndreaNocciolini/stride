@@ -12,7 +12,7 @@ function Notes(props: any) {
         <h1 className='title'>Titolo</h1>
         <TransitionGroup>
           {
-            props.notes.map((note: Note, index: number) => (
+            props.notes.filter((e: any) => !e.done).map((note: Note, index: number) => (
               <CSSTransition
                 key={index}
                 timeout={500}
@@ -23,7 +23,18 @@ function Notes(props: any) {
             )
             ).reverse()
           }
-
+          {
+            props.notes.filter((e: any) => e.done).map((note: Note, index: number) => (
+              <CSSTransition
+                key={index}
+                timeout={500}
+                classNames="note-animation"
+              >
+                <SingleNote key={index} note={note} setNotes={props.setNotes} notes={props.notes} />
+              </CSSTransition>
+            )
+            ).reverse()
+          }
         </TransitionGroup>
       </div>
     </div>
