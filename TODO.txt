@@ -1,3 +1,4 @@
 1) ANIMATION MODAL
 2) MOVE ITEM IN LIST WITH ANIMATION
 3) IMPROVE CLASSES
+// https://codesandbox.io/examples/package/react-animate-height --> nice examples //

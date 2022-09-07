@@ -15,17 +15,21 @@
     }
 
     .note-animation-enter {
+        transform: scaleY(0);
         opacity: 0;
     }
     .note-animation-enter-active {
+        transform: scaleY(1);
         opacity: 1;
-        transition: opacity 500ms ease-in;
+        transition: all 400ms ease-in;
     }
     .note-animation-exit {
+        transform: scaleY(1);
         opacity: 1;
     }
     .note-animation-exit-active {
+        transform: scaleY(0);
         opacity: 0;
-        transition: opacity 500ms ease-in;
+        transition: all 400ms ease-in;
     }
 }

@@ -15,7 +15,7 @@ function Notes(props: any) {
             props.notes.filter((e: any) => !e.done).map((note: Note, index: number) => (
               <CSSTransition
                 key={index}
-                timeout={500}
+                timeout={700}
                 classNames="note-animation"
               >
                 <SingleNote key={index} note={note} setNotes={props.setNotes} notes={props.notes} />
