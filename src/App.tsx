@@ -4,18 +4,21 @@ import './App.scss';
 // import { CSSTransition, TransitionGroup } from "react-transition-group";
 import Notes from './containers/Notes';
 import Modal from './components/Modal';
+import { Height } from 'react-animate-height';
 
 // Note Type, should i move it to an external file?
 export type Note = {
   id: string,
   content: string,
-  done: boolean
+  done: boolean,
+  height: Height
 }
 
 function App() {
 
   const [isModalOpen, setIsModalOpen] = useState(false as boolean);
   const [notes, setNotes] = useState([] as Note[]);
+  const [checkNotes, setCheckNotes] = useState([] as Note[]);
   const [message, setMessage] = useState('');
 
   const openModal = (): any => {
@@ -25,7 +28,7 @@ function App() {
   return (
     <div className="App">
       <div className="App-container">
-        <Notes notes={notes} setNotes={setNotes} />
+        <Notes notes={notes} setNotes={setNotes} checkNotes={checkNotes} setCheckNotes={setCheckNotes} />
         <div>
           <button onClick={openModal} className="new-note d-flex align-items-center">
             <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
@@ -36,13 +39,6 @@ function App() {
           </button>
         </div>
         {isModalOpen &&
-          // <TransitionGroup>
-          //   <CSSTransition
-          //     key={null}
-          //     in={isModalOpen}
-          //     timeout={0}
-          //     classNames="modal-animation"
-          //   >
           <Modal
             setIsModalOpen={setIsModalOpen}
             notes={notes}
@@ -50,8 +46,6 @@ function App() {
             message={message}
             setMessage={setMessage}
           />
-          //   </CSSTransition>
-          // </TransitionGroup>
         }
       </div>
 

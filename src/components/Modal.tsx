@@ -11,7 +11,8 @@ function Modal(props: any) {
             props.setNotes([...props.notes, {
                 id: uuid(),
                 content: props.message,
-                done: false
+                done: false,
+                height: 0
             } as Note])
         }
         props.setIsModalOpen(false)
